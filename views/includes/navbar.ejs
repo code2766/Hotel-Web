@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            *{
+      padding: 0;
+     margin: 0;
+        }
+            
+        #p1 {
+        display: flex;
+        height: 6vw;
+        align-items: center;
+        padding-left: 0vw;
+        
+    
+        }
+    .navs{
+    width: fit-content;
+    padding-left: 2.6vw;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    display: flex;
+    }
+
+
+
+    .fa-compass{
+    font-size: 2.6rem;
+    color: #FF385C;
+    }
+
+nav{
+    
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    border-bottom: 1px solid black;
+         background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+}
+#p2 {
+    margin-left: auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#p2 button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #FF385C;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(255,56,92,0.08);
+}
+
+#p2 button:hover {
+    background: #fff;
+    color: #FF385C;
+    border: 1.5px solid #FF385C;
+}
+    </style>
+</head>
+<body>
+    <nav>
+    <div id="p1">
+        <h3><a href="/" class="navs"><i class="fa-solid fa-compass"></i></a></h3>
+        <h3><a href="/products" class="navs">All Listings</a></h3>
+        <h3><a href="/products/new" class="navs">Make New Listing</a></h3>
+    </div>
+    <div id="p2">
+        <%if (!currUser){%>
+        <form action="/login">
+            <button>Login</button>
+        </form>
+        <form action="/signup">
+            <button>Sign Up</button>
+        </form>
+        <%}%>
+         <%if (currUser){%>
+        <form action="/logout">
+            <button>LogOut</button>
+        </form>
+        <%}%>
+    </div>
+</nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.from(".navs", {
+            x: 100,
+            opacity: 0,
+            duration: 1.1,
+            stagger: 0.2,
+        });
+    
+    </script>
+</body>
+</html>
+
+
+
+
+

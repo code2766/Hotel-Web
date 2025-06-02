@@ -1,0 +1,14 @@
+body{
+    background-color: white;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.cotainer{
+    flex: 1;
+  }
+

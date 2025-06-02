@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate') %>
+
+
+<style>
+  .card {
+    width: 17vw;
+    border-radius: 12px;
+    /* border: 2px solid black; */
+    overflow: hidden;
+    margin: 1vw;
+    font-family: sans-serif;
+    background: white;
+  }
+ 
+
+  .img-container {
+    width: 100%;
+    height: 12vw; /* fixed height to keep ratio */
+    overflow: hidden;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
+  .card:hover img {
+  filter: brightness(1.2);
+}
+ 
+  .card-body {
+    padding: 0.6vw;
+    text-align: left;
+  }
+
+  .ti {
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+  }
+
+  .price {
+    font-size: 1rem;
+    
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    justify-content: center;
+  }
+ 
+</style>
+
+
+<div class="cards-container">
+  <% for (item of allitem){ %>
+<a href="/products/<%=item._id%>">
+    <div class="card">
+      <div class="img-container">
+        <img src="<%= item.image.url %>" alt="Listing Image">
+      </div>
+      <div class="card-body">
+        <div class="ti"><%= item.title %></div>
+        <div class="price">₹<%= item.price %>/night</div>
+      </div>
+    </div>
+</a>
+  <% } %>
+</div>
+
+<script>
+  gsap.from(".card",{
+    // y:20,
+    opacity:0,
+    duration:1.1,
+    stagger:0.1,
+    scale:.8,
+  })
+</script>

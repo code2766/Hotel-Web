@@ -1,0 +1,70 @@
+<% layout('layouts/boilerplate') %>
+
+<style>
+.signup-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 32px 28px 24px 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-container h1 {
+    margin-bottom: 24px;
+    color: #FF385C;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.signup-container form {
+    width: 100%;
+    padding: 0 8px; /* Add horizontal padding inside the card */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-container input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s;
+    box-sizing: border-box; /* Ensures padding doesn't overflow */
+}
+.signup-container input:focus {
+    border: 1.5px solid #FF385C;
+    outline: none;
+}
+.signup-container button {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 16px;
+    background: #FF385C;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.signup-container button:hover {
+    background: #fff;
+    color: #FF385C;
+    border: 1.5px solid #FF385C;
+}
+</style>
+
+<div class="signup-container">
+    <h1>Login on My Website</h1>
+    <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button>Login</button>
+    </form>
+</div>

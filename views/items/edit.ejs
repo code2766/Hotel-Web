@@ -1,0 +1,92 @@
+<% layout('layouts/boilerplate') %>
+<body>
+    
+    <div class="form-container">
+        <h1>Edit Your Listing</h1>
+    <form method="post" action="/products/<%=items._id%>?_method=PUT">
+        <input type="text" value="<%=items.title%>" name="item[title]">
+        <br>
+        <input type="text"name="item[description]" value="<%=items.description%>"></input>
+        <br>
+        <input type="text" value="<%=items.price%>"name="item[price]">
+        <br>
+        <input type="text" value="<%=items.image%>"name="item[image.url]">
+        <br>
+        <input type="text" value="<%=items.location%>"name="item[location]"> 
+        <br>
+        <input type="text" value="<%=items.country%>"name="item[country]">
+        <br>
+        <button>Edit</button>
+    </form></div>
+</body>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .form-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #111827;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border 0.2s;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #FF385C;
+  }
+
+  button {
+    width: 20%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #FF385C;  
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #FF385C;
+  }
+  .cotainer{
+  
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+  }
+
+</style>
